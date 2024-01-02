@@ -40,7 +40,7 @@ export default function Home() {
       className={`flex min-h-screen flex-col items-center justify-between p-48 ${inter.className}`}
     >
       {/* Training Test Text for all Screens */}
-      <div className="w-full text-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit rounded-xl border bg-gray-200 p-4 dark:bg-zinc-800/30">
+      <div className="w-full text-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:from-inherit rounded-xl border bg-gray-200 p-4 dark:bg-zinc-800/30">
         Training Test&nbsp;
         <code className="font-mono font-bold">
           fetch, display data and use pagination
