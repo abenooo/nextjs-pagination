@@ -35,21 +35,33 @@ export default function Home() {
     >
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         {/* Student Info and Messages */}
+        <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
+        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+        Training Test&nbsp;
+          <code className="font-mono font-bold">fetch,display data and use pagination</code>
+        </p>
         {isLastStudent ? (
           <p>This is the last student.</p>
         ) : (
           studentData && (
             <div className="student-info">
               <h2>{studentData.full_name}</h2>
-              {/* Render other student details here */}
+              <p>First Name: {studentData.first_name}</p>
+              <p>Last Name: {studentData.last_name}</p>
+              <p>Age: {studentData.age}</p>
+              <p>Date of Birth: {studentData.date_of_birth}</p>
+              <p>Address: {`${studentData.address.street}, ${studentData.address.city}, ${studentData.address.state}, ${studentData.address.zip_code}`}</p>
+              <p>Class: {studentData.class}</p>
+              <p>Grade: {studentData.grade}</p>
+              <p>Subjects: {studentData.subjects.join(', ')}</p>
             </div>
           )
         )}
-
+</div>
         {/* Pagination Controls */}
-        <div className="pagination-controls">
+        <div className="pagination-controls mt-5">
           <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 0}>Previous</button>
-          <button className='ml-5' onClick={() => setCurrentPage(currentPage + 1)} disabled={isLastStudent}>Next</button>
+          <button onClick={() => setCurrentPage(currentPage + 1)} disabled={isLastStudent} className='ml-5'>Next</button>
         </div>
 
         {/* Message for First Student */}
